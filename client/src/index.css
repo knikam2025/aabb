@@ -20,7 +20,7 @@ body,
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #21295c;
+  background: yellowgreen;
 }
 
 /* Handle on Hover */

@@ -8,6 +8,21 @@ import { Provider } from "react-redux";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { api } from "state/api";
 
+
+
+
+const PORT = process.env.PORT ||9000
+mongoose.connect(process.env.MONGO_URL,{
+    useNewUrlParser : true,
+    useUnifiedTopology : true,
+}).then(()=>{
+    app.listen(PORT , () =>console.log(`server Port : ${PORT}`))
+
+    User.insertMany(dataUser); 
+    
+}).catch((error)=> console.log(`${error} did not connect`));
+
+
 const store = configureStore({
   reducer: {
     global: globalReducer,
@@ -25,3 +40,6 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
+
+
+
